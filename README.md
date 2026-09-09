@@ -69,13 +69,13 @@ flowchart TD
     TASKS --> DB[(PostgreSQL)]
     DB --> CEL[Celery scheduler]
     CEL --> REM[Medication + appointment reminders]
-    REM --> PT[Patient app\nFlutter]
+    REM --> PT[Patient app<br/>Flutter]
     PT --> CHK[Structured symptom check-in]
     CHK --> RULES[Rule engine]
     RULES -->|concerning response| ESC[Escalation to predefined contact]
-    PT --> CONSENT[Consent scopes\nper category]
+    PT --> CONSENT[Consent scopes<br/>per category]
     CONSENT --> CG[Caregiver view]
-    DB --> AUDIT[(Audit log\nevery share + escalation)]
+    DB --> AUDIT[(Audit log<br/>every share + escalation)]
     FHIR[SMART on FHIR sandbox] -.simulated.-> DB
 ```
 
